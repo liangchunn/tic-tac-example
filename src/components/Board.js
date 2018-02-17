@@ -15,8 +15,7 @@ class Board extends React.Component {
   handleBoardUpdate = i => () => {
     this.setState(prevState => {
       // check if location at i index is null and if the board is not full, or else do nothing
-      return prevState.board[i] === null &&
-        prevState.board.reduce((prev, curr) => prev + curr, null) !== null
+      return prevState.board[i] === null && prevState.board.includes(null)
         ? {
             // do not mutate! creating a new array with the move in the correct spot
             board: [
